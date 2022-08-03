@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div class="wrapper-container">
+        <div class="sideArea">
+            <a href="#">
+                <span>Home</span>
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="#">
+                <span>Services</span>
+                <i class="fa-solid fa-headphones"></i>
+            </a>
+            <a href="#">
+                <span>Alerts</span>
+                <i class="fa-solid fa-flag"></i>
+            </a>
+            <a href="#">
+                <span>Charts</span>
+                <i class="fa-solid fa-chart-pie"></i>
+            </a>
+        </div>
+        <div class="headerArea">
+            <div class="haeder-left">
+                <div class="wrapper-input">
+                    <input type="search" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button> 
+                </div>
+            </div>
+            <div class="header-right">
+                <a><i class="fa-solid fa-bell"></i></a>
+                <a><i class="fa-solid fa-envelope"></i></a>
+                <a>Json Park</a>
+            </div>
+            <div class="header-mobile-menu">
+                <button><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="mainArea">
+            <h1>Dashboard</h1>
+            <div class="main-item">
+                <div class="outter-box shadow">
+                    <div class="inner-box">
+                        <div class="main-item-detail">
+                            <div>Earnings (Monthly)</div>
+                            <div>$1,900,000</div>
+                        </div>
+                        <div class="main-item-icon">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="outter-box shadow">
+                    <div class="inner-box">
+                        <div class="main-item-detail">
+                            <div>Earnings (Annual)</div>
+                            <div>$10,250,000</div>
+                        </div>
+                        <div class="main-item-icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="outter-box shadow">
+                    <div class="inner-box">
+                        <div class="main-item-detail">
+                            <div>Tasks</div>
+                            <div>20EA</div>
+                        </div>
+                        <div class="main-item-icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="outter-box shadow">
+                    <div class="inner-box">
+                        <div class="main-item-detail">
+                            <div>Requests</div>
+                            <div>16EA</div>
+                        </div>
+                        <div class="main-item-icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-view">
+                <div class="wrapper-main-view">
+                    <div class="main-view-chart shadow">
+                        <div class="view-label">Overview</div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="main-view-task">
+                        <div class="view-label">Tasks</div>
+                        <ul class="task-item shadow">
+                            <li>Borrowed Item</li>
+                            <li>Notion Requests</li>
+                            <li>Code Review Comments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/787074e497.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    fill : true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
